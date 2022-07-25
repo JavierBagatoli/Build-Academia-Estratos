@@ -1,7 +1,7 @@
 import express from "express"
 import morgan from "morgan"
 import cors from "cors"
-import IndexRoutes from "./routes/Task.routes"
+import DocumentacionRoutes from "./routes/Documentacion.routes"
 
 const app = express()
 
@@ -12,12 +12,12 @@ app.set("port", process.env.PORT || 3000)
 app.use(cors()) //En vacio es * si no corresponde poner origin: ""
 app.use(morgan("dev"))
 app.use(express.json())
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 //Rutas
-app.get("/", (req,res) => {
-    res.json({message: "hola"})
+app.get("/", (req, res) => {
+    res.json({ message: "hola" })
 })
 
-app.use("/api/task",IndexRoutes)
+app.use("/api/documentaciones", DocumentacionRoutes)
 
 export default app;
