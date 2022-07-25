@@ -1,3 +1,6 @@
-# Node
-node_modules
+#Variables de entorno
+.env
+
+#node
 dist
+node_modules
