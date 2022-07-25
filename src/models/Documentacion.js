@@ -11,6 +11,7 @@ const documentacionEsquema = new Schema(
     descripcion: { type: String, required: true, trim: true },
     enlaces: { type: Array, required: true, trim: true },
     autor: { type: String, required: true, trim: true },
+    esVideo: { type: Boolean, required: true, trim: true },
   },
   {
     versionKey: false,
