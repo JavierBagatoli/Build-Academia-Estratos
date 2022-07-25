@@ -27,3 +27,12 @@ export const crearDocumentacion = async (req, res) => {
         res.json(e)
     }
 }
+
+export const actualizarDocumentacion = async (req, res) => {
+    try {
+        const datosActualizados = await Usuario.findByIdAndUpdate(req.body.id, req.body)
+        resp.json(datosActualizados)
+    } catch (error) {
+        resp.status(404).json({ mensaje: error })
+    }
+}
