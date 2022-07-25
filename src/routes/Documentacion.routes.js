@@ -1,11 +1,10 @@
 import { Router } from "express";
-import * as documentacionController from "../controllers/documentacion.controller"
+import * as documentacionController from "../controllers/documentacion.controller";
 
 // Creado por Joan Salas 25/07
 const router = Router();
 
-router.get("/", documentacionController.obtenerTodas()
-)
+router.get("/", documentacionController.obtenerDocumentaciones);
 
 // TODO: terminar estas rutas
 // router.post("/", createTask())
