@@ -4,15 +4,11 @@ import * as documentacionController from "../controllers/documentacion.controlle
 // Creado por Joan Salas 25/07
 const router = Router();
 
+router.get("/:id", documentacionController.encontrarDocumento);
+router.put("/:id", documentacionController.actualizarDocumentacion);
 router.get("/", documentacionController.obtenerDocumentaciones);
+router.delete("/:id", documentacionController.eliminarDocumentacion);
+router.post("/", documentacionController.crearDocumentacion);
 
-// TODO: terminar estas rutas
-// router.post("/", createTask())
-
-// router.get("/:id", findOneTask())
-
-// router.delete("/:id", deleteTask())
-
-// router.put("/:id", updateTask())
 
 export default router;

@@ -5,6 +5,7 @@ import { getPagination } from "../libs/getPagination";
 // Modificado por Javier Bagatoli 25/07
 
 export const obtenerDocumentaciones = async (req, res) => {
+    console.log("funciona el get")
     try {
         const { size, page } = req.query;
         const { limit, offset } = getPagination(page, size);
@@ -15,11 +16,10 @@ export const obtenerDocumentaciones = async (req, res) => {
     }
 };
 
-export const encontrarDocumento = () => async (req, res) => {
+export const encontrarDocumento = async (req, res) => {
     const { id } = req.params;
     try {
-        const documento = await Task.findById(id);
-
+        const documento = await Documentacion.findById(id);
         if (!documento)
             return res.status(404).json({
                 message: `El documento ${id} no existe`,
@@ -32,7 +32,7 @@ export const encontrarDocumento = () => async (req, res) => {
     }
 };
 
-export const eliminarDocumentacion = () => async (req, res) => {
+export const eliminarDocumentacion = async (req, res) => {
     try {
         await Documentacion.findByIdAndDelete(req.params.id);
         res.json({ message: `${req.params.id} documento eliminado` });
@@ -42,7 +42,6 @@ export const eliminarDocumentacion = () => async (req, res) => {
         });
     }
 };
-// TODO JS: Crear y actualizar
 
 export const crearDocumentacion = async (req, res) => {
     try {
@@ -58,7 +57,7 @@ export const crearDocumentacion = async (req, res) => {
 
 export const actualizarDocumentacion = async (req, res) => {
     try {
-        const datosActualizados = await Usuario.findByIdAndUpdate(req.body.id, req.body)
+        const datosActualizados = await Documentacion.findByIdAndUpdate(req.body.id, req.body)
         resp.json(datosActualizados)
     } catch (error) {
         resp.status(404).json({ mensaje: error })
