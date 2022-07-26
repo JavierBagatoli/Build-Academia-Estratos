@@ -1,0 +1,10 @@
+_id: ut_ed49a0ae46f34484adee1a250fa314ef
+type: UnitTest
+parentId: uts_d5511c3845ca4182aad6ec59e97001e4
+modified: 1658854323438
+created: 1658854294945
+requestId: req_83b28b8caf2e4c34b6bfe265fb4ade98
+name: TEST PUT actualizar documentacion
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);
