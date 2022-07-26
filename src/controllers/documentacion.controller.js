@@ -57,8 +57,9 @@ export const crearDocumentacion = async (req, res) => {
 
 export const actualizarDocumentacion = async (req, res) => {
     try {
-        const datosActualizados = await Documentacion.findByIdAndUpdate(req.params.id, req.body)
-        res.json(req.body)
+        await Documentacion.findByIdAndUpdate(req.params.id, req.body)
+        const datosActualizados = await Documentacion.findById(req.params.id)
+        res.json(datosActualizados)
     } catch (error) {
         res.status(404).json({ mensaje: error })
     }
