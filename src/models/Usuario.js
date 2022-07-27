@@ -12,7 +12,7 @@ const usuarioEsquema = new Schema(
     fechaNacimiento: { type: Number, required: true, trim: true },
     correo: { type: String, required: true, trim: true },
     descripcion: { type: String, required: true, trim: true },
-    cargo: { type: Boolean, required: true, trim: true }, //Practicante, Trainee o Contratado
+    cargo: { type: String, required: true, trim: true }, //Practicante, Trainee o Contratado
     especialidad: { type: String, required: true, trim: true },
   },
   {
