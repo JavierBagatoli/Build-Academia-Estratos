@@ -8,11 +8,11 @@ const usuarioEsquema = new Schema(
     apellido: { type: String, required: true, trim: true },
     password: { type: String, required: true, trim: true },
     pais: { type: String, required: true, trim: true },
-    region: { type: String, required: true, trim: true },
+    ciudad: { type: String, required: true, trim: true },
     fechaNacimiento: { type: Number, required: true, trim: true },
-    email: { type: String, required: true, trim: true },
+    correo: { type: String, required: true, trim: true },
     descripcion: { type: String, required: true, trim: true },
-    esPracticante: { type: Boolean, required: true, trim: true }, //Trainee o practicante
+    cargo: { type: Boolean, required: true, trim: true }, //Practicante, Trainee o Contratado
     especialidad: { type: String, required: true, trim: true },
   },
   {

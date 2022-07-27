@@ -32,6 +32,7 @@ export const encontrarDocumento = async (req, res) => {
     }
 };
 
+// Verificar borrado de un objeto no existente
 export const eliminarDocumentacion = async (req, res) => {
     try {
         await Documentacion.findByIdAndDelete(req.params.id);
